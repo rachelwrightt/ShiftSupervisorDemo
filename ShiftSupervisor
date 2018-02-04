@@ -1,0 +1,107 @@
+/**
+ *
+ * @author Rachel Wright
+ */
+ 
+ /**
+   The ShiftSupervisor class stores data about a shift supervisor
+   for the ShiftSupervisor Class programming challenge.
+*/
+
+public class ShiftSupervisor extends Employee
+{
+    private double salary;      // supervisor salary
+    private double bonus;       // supervisor bonus
+    
+    /**
+      This constructor initializes an object with a name,
+      employee number, and hire date from Employee + 
+      salary and bonus for supervisor.
+      @param n The employee's name.
+      @param num The employee's number.
+      @param date The employee's hire date.
+      @param s The supervisor's salary
+      @param b The supervisor's bonus.
+   */
+    
+   public ShiftSupervisor(String n, String num, String date, double s, double b)
+    {
+       super(n, num, date);
+       salary = s;
+       bonus = b;
+       
+    }
+   
+   /**
+      The no-arg constructor initializes an object with
+      null strings for name, employee number, and hire
+      date and '0's for the doubles for salary and bonus.
+   */
+   
+    public ShiftSupervisor()
+    {
+       super();
+       salary = 0.0;
+       bonus = 0.0;
+    }
+    
+    /**
+      The setSalary method sets the supervisor's 
+      salary.
+      @param newSalary The supervisor's salary.
+   */
+    
+    public void setSalary(double newSalary)
+    {
+        this.salary = newSalary;
+    }
+    
+    /**
+      The getSalary method returns the
+      supervisor's salary.
+      @return The supervisor's salary.
+   */
+            
+    public double getSalary()
+    {
+        return salary;
+    }
+    
+    /**
+      The setSalary method sets the supervisor's 
+      bonus.
+      @param newBonus The supervisor's bonus.
+   */
+    
+    public void setBonus(double newBonus)
+    {
+        this.bonus = newBonus;
+    }
+    
+    /**
+      The getBonus method returns the
+      supervisor's bonus.
+      @return The supervisor's bonus.
+   */
+    
+    public double getBonus()
+    {
+        return bonus;
+    }
+    
+    /**
+      toString method
+      @return A reference to a String representation of
+      the object. Returns Employee toString + supervisor salary & bonus.
+   */
+    
+    @Override
+    public String toString()
+    {
+        String str;
+        str = super.toString();
+        str = str + "\nThe Shift Supervisor\'s salary is: $" + salary + "\nShift Supervisor\'s annual bonus is: $"+ bonus;
+        return str;
+    }
+    
+}
