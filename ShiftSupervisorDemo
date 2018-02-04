@@ -1,0 +1,57 @@
+/**
+ *
+ * @author Rachel Wright
+ */
+
+import java.util.Scanner;
+public class ShiftSupervisorDemo 
+{
+    public static void main(String[] argc)
+    {
+        // creates instance of new scanner
+        Scanner information = new Scanner(System.in);
+        
+        // Asks for employees name and converts user input from scanner
+        System.out.println("Please enter Employees Name...");
+        String employeeName = information.nextLine();
+        
+        // Asks for employees number and converts user input from scanner
+        System.out.println("Please Enter Employee Number in format \"XXX-0\"...");
+        String employeeNumber = information.nextLine();
+        
+        // Asks for employees hire date and converts user input from scanner
+        System.out.println("Please Enter Employee Hire Date...");
+        String employeeHireDate = information.nextLine();
+        
+        // Asks whether employee is supervisor and converts user input from scanner
+        System.out.println("Is Employee a Supervisor?");
+        String supervisorAnswer = information.next();
+        
+        /**
+        If statement for user input. If 'yes' ask for supervisor salary and bonus.
+        * If 'no' out print employee information.
+        */
+        
+        if(supervisorAnswer.toLowerCase().startsWith("y"))
+        {
+            // Asks for supervisor salary and converts user input from scanner
+            System.out.println("Please Enter Employee Annual Salary...");
+            Double superSalary = information.nextDouble();
+            
+            // Asks for supervisor bonus and converts user input from scanner
+            System.out.println("Please Enter Employee Yearly Bonus...");
+            Double superBonus = information.nextDouble();
+            
+            // creates new supervisor instance from ShiftSupervisor class
+            ShiftSupervisor ss1 = new ShiftSupervisor(employeeName, employeeNumber, 
+                    employeeHireDate, superSalary, superBonus);
+            System.out.println("\n" + ss1);
+        }
+        else 
+        {
+           // creates new employee instance from employee class
+           Employee emp1 = new Employee(employeeName, employeeNumber, employeeHireDate);
+           System.out.println("\n" + emp1);
+        }
+    }
+}
